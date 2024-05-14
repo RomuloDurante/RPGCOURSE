@@ -36,6 +36,7 @@ public class PlayerState
     public virtual void Update()
     {
         _xInput = Input.GetAxisRaw("Horizontal");
+        player.anin.SetFloat("yVelocity", rb.velocity.y);
     }
 
     public virtual void Exit()

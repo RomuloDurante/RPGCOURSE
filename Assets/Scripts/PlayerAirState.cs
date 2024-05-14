@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerGroundState : PlayerState
+public class PlayerAirState : PlayerState
 {
-    public PlayerGroundState(Player player, PlayerStateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
+    public PlayerAirState(Player player, PlayerStateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
     {
     }
 
@@ -21,7 +21,8 @@ public class PlayerGroundState : PlayerState
     public override void Update()
     {
         base.Update();
-        if(Input.GetKeyDown(KeyCode.Space))
-            stateMachine.ChangeState(player.jumpState);
+
+        if (rb.velocity.y == 0)
+            stateMachine.ChangeState(player.idleState);
     }
 }
