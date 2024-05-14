@@ -18,16 +18,16 @@ public class PlayerState
 
     public virtual void Enter()
     {
-        Debug.Log("I enter " + _animBoolName);
+        player.anin.SetBool(_animBoolName, true);
     }
 
     public virtual void Update()
     {
-        Debug.Log("I in update " + _animBoolName);
+        //Debug.Log("I in update " + _animBoolName);
     }
 
     public virtual void Exit()
     {
-        Debug.Log("I in exit " + _animBoolName);
+        player.anin.SetBool(_animBoolName, false);
     }
 }
